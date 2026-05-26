@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week08 ミニドリル 問題3｜名前ソート + 復習</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-sky-50 to-white">
+
+  <!--
+    ゴール: goal.png と同じ見た目
+    - header（見出し＋説明＋「名前順に並べる」ボタン）
+    - members 配列をカード表示
+    - ボタンで名前（日本語）ソート → 配列を並べ替えてから forEach で描画し直す
+      ※ slice().sort(...) で元配列を壊さないようにする
+  -->
+
+  <header class="border-b border-sky-100 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex max-w-4xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+      <!-- TODO -->
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-4xl px-6 py-10">
+    <div id="memberCards" class="grid gap-4 sm:grid-cols-2"></div>
+  </main>
+
+  <script>
+    // TODO: 福田・青木・石井・佐藤 の配列を用意し、描画関数とソート後の再描装
+  </script>
+</body>
+</html>

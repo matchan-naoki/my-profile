@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week04-2 hover バグ診断</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+
+  <h1 class="text-2xl font-bold text-gray-700 mb-2">Week04-2: hover のバグを直せ</h1>
+  <p class="text-gray-500 mb-8">以下のボタンとカードは hover が機能していません。なぜか考えて直してください。</p>
+
+  <div class="flex gap-6 flex-wrap mb-10">
+
+    <!--
+      🐛 バグ: hover が動かない
+      どこがおかしいか探して直してみよう
+    -->
+    <button class="bg-blue-500 hover: bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
+      ❌ ボタン（hover 壊れてる）
+    </button>
+
+    <button class="bg-gray-200 hover: bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg transition">
+      ❌ グレーボタン（hover 壊れてる）
+    </button>
+
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 max-w-lg">
+
+    <!--
+      🐛 バグ: shadow が hover で変わらない
+      class をよく見てみよう
+    -->
+    <div class="bg-white rounded-xl p-6 shadow hover: shadow-lg transition cursor-pointer">
+      <h2 class="font-bold text-gray-800 mb-1">❌ カード A</h2>
+      <p class="text-gray-500 text-sm">マウスを乗せても影が変わりません。</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow hover: shadow-lg transition cursor-pointer">
+      <h2 class="font-bold text-gray-800 mb-1">❌ カード B</h2>
+      <p class="text-gray-500 text-sm">hover: の後のスペースが原因です。</p>
+    </div>
+
+  </div>
+
+  <!--
+    TODO: 上のボタンとカードの class を修正して、
+    goal.png と同じ見た目のように hover が動くようにしてください。
+    ヒント: hover: ではなく hover: のスペースに注目！
+  -->
+
+</body>
+</html>

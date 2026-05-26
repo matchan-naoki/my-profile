@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week06 ミニドリル 問題2｜バグ診断</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-amber-50 flex items-center justify-center p-6">
+
+  <div class="w-full max-w-md rounded-xl bg-white p-8 shadow-lg ring-1 ring-slate-200">
+    <h1 class="text-xl font-bold text-slate-800">割り勘チェック（バグあり）</h1>
+    <p class="mt-2 text-sm text-slate-600">合計 <strong>5000</strong> 円、人数 <strong>3</strong> のとき、1人あたりは 1667 円（切り上げ）になるはずです。</p>
+
+    <div class="mt-6 space-y-4">
+      <div>
+        <label for="total" class="mb-1 block text-sm font-medium text-slate-700">合計金額（円）</label>
+        <input id="total" type="number" value="5000" min="0"
+          class="w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-200">
+      </div>
+      <div>
+        <label for="people" class="mb-1 block text-sm font-medium text-slate-700">人数</label>
+        <input id="people" type="number" value="3" min="1"
+          class="w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-200">
+      </div>
+    </div>
+
+    <button type="button" id="calcBtn"
+      class="mt-6 w-full rounded-lg bg-amber-600 py-3 text-sm font-bold text-white hover:bg-amber-700">
+      計算する
+    </button>
+
+    <p id="result" class="mt-6 text-center text-2xl font-bold text-amber-700"></p>
+  </div>
+
+  <script>
+    const totalInput = document.querySelector("#total");
+    const peopleInput = document.querySelector("#people");
+    const result = document.querySelector("#result");
+
+    document.querySelector("#calcBtn").addEventListener("click", () => {
+      const total = totalInput.value;
+      const people = peopleInput.value;
+      // バグ: 文字列のまま + してしまっている（割り算と混同しないこと）
+      const perPerson = total + people;
+      result.textContent = perPerson + " 円";
+    });
+  </script>
+</body>
+</html>

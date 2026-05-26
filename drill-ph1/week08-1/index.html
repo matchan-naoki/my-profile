@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week08 ミニドリル 問題1｜部室備品リスト</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 p-8">
+
+  <div class="mx-auto max-w-3xl">
+    <h1 class="text-2xl font-bold text-slate-900">部室備品リスト</h1>
+    <p class="mt-2 text-sm text-slate-600">下の配列データを forEach で <code class="rounded bg-white px-1 text-xs">tbody#equipmentBody</code> に行追加する</p>
+
+    <div class="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+      <table class="min-w-full text-left text-sm">
+        <thead class="bg-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-600">
+          <tr>
+            <th class="px-4 py-3">備品名</th>
+            <th class="px-4 py-3">数量</th>
+            <th class="px-4 py-3">置き場所</th>
+          </tr>
+        </thead>
+        <tbody id="equipmentBody" class="divide-y divide-slate-200 text-slate-800"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const items = [
+      { name: "ホワイトボード", qty: 2, place: "前方" },
+      { name: "プロジェクター", qty: 1, place: "天井ラック" },
+      { name: "延長コード", qty: 4, place: "棚A" },
+      { name: "名字札テープ", qty: 12, place: "引き出し" },
+    ];
+
+    // TODO: items.forEach で tr を createElement し、各セルに name / qty / place を表示して appendChild
+
+  </script>
+</body>
+</html>

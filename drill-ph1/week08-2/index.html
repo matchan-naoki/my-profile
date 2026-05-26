@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week08 ミニドリル 問題2｜バグ診断</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-violet-50 p-8">
+
+  <div class="mx-auto max-w-xl rounded-xl bg-white p-6 shadow-md">
+    <h1 class="text-lg font-bold text-slate-900">読みやすいラベル一覧</h1>
+    <p class="mt-2 text-sm text-slate-600">Console を開くと <code class="text-xs">undefined</code> が混ざっているはずです</p>
+    <ul id="labelList" class="mt-4 list-inside list-disc space-y-1 text-slate-800"></ul>
+  </div>
+
+  <script>
+    const members = [
+      { name: "田中", role: "PM" },
+      { name: "鈴木", role: "開発" },
+      { name: "佐藤", role: "デザイン" },
+    ];
+
+    // バグ: map のコールバックで return していない（forEach と混同しやすい）
+    const lines = members.map((m) => {
+      m.name + " · " + m.role;
+    });
+
+    const list = document.querySelector("#labelList");
+    lines.forEach((line) => {
+      const li = document.createElement("li");
+      li.textContent = line;
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>
